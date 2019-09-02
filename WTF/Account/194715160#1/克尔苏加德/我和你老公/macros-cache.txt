@@ -1,0 +1,72 @@
+VER 3 0100000000000019 "a1" "INV_MISC_QUESTIONMARK"
+/script SetBinding('[','INTERACTMOUSEOVER')
+/script SetBinding(']','INTERACTTARGET')
+END
+VER 3 010000000000000D "假死" "INV_MISC_QUESTIONMARK"
+#showtooltip 假死
+/stopcasting
+/stopcasting
+/cast 假死
+/cast 装死
+END
+VER 3 0100000000000013 "取消乌龟壳" "INV_MISC_QUESTIONMARK"
+#showtooltip 灵龟守护
+/cast 灵龟守护
+/cancelaura 灵龟守护
+END
+VER 3 0100000000000001 "多重" "INV_MISC_QUESTIONMARK"
+#showtooltip 多重射击
+/startattack
+/cast [target=mouseover,harm,nodead][]多重射击
+END
+VER 3 0100000000000012 "宠物被动" "INV_MISC_QUESTIONMARK"
+#showtooltip 急奔
+/petfollow 
+/petpassive 
+/cast 急奔 
+/cast 治疗宠物 
+/script UIErrorsFrame:Clear()
+END
+VER 3 0100000000000003 "打断" "INV_MISC_QUESTIONMARK"
+/run F=F or CreateFrame("frame")F:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")F:SetScript("OnEvent",function(_,_,_,e,_,_,p,_,_,_,n,_,_,_,_,_,_,s)if(e=="SPELL_INTERRUPT"and p=="我和你老公")then SendChatMessage("成功1打断>"..n.."<的-"..s,"yell");end;end)
+/cast 反制射击
+END
+VER 3 0100000000000015 "毒蛇" "INV_MISC_QUESTIONMARK"
+#showtooltip 毒蛇钉刺
+/cancelaura 灵龟守护
+/cast [@mouseover,harm,exists][harm]毒蛇钉刺
+END
+VER 3 0100000000000010 "牺牲" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@mouseover,help,exists][help,exists][@targettarget,help,exists][]牺牲咆哮
+/cast 急奔
+END
+VER 3 0100000000000011 "生存爆发" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast 雄鹰守护
+/cast 毒蛇猎手
+/cast 血性狂怒
+END
+VER 3 010000000000000F "生存铁" "INV_MISC_QUESTIONMARK"
+#showtooltip 杀戮命令
+/cancelaura 灵龟守护
+/use 13
+/petattack 
+/use [@mouseover,harm,exists][harm]杀戮命令
+END
+VER 3 0100000000000017 "眼镜蛇" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/castsequence reset=X 狂野怒火,野性守护
+/use 末日余波
+END
+VER 3 0100000000000018 "误导" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/tar 玄牛雕像
+/cast 误导
+END
+VER 3 0100000000000006 "震荡射击" "INV_MISC_QUESTIONMARK"
+#showtooltip 震荡射击
+/stopcasting 
+/stopcasting 
+/Cast [target=mouseover,harm,nodead]震荡射击;[modifier:ctrl,target=focus,harm,nodead]震荡射击;震荡射击
+END

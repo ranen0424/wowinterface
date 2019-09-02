@@ -1,0 +1,8 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Include file="Libs\Ace3.xml"/>
+	<Include file="Libs\Libs.xml"/>
+	<Script file="TSCore.lua"/>
+	<Script file="TeamStats.lua"/>
+	<Script file="TeamStatsTABS.lua"/>
+	<Script file="TeamStatsUI.lua"/>
+</Ui>

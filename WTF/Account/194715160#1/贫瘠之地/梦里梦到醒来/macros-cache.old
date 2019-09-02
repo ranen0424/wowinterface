@@ -1,0 +1,76 @@
+VER 3 0100000000000006 "保护" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [target=mouseover,help][target=target,help,exists][target=player] 保护祝福
+END
+VER 3 0100000000000020 "保护" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 保护祝福
+END
+VER 3 0100000000000016 "加血" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [target=mouseover,help][target=target,help,exists][target=player]守护者之手
+END
+VER 3 010000000000001D "圣光术" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 圣光术
+END
+VER 3 010000000000001B "圣光闪现" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 圣光闪现
+END
+VER 3 010000000000001F "圣疗术" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 圣疗术
+END
+VER 3 010000000000000C "打断" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast 责难
+/run local f=RbA or CreateFrame("Frame","RbA") f:SetScript("OnEvent",function(s,e,u,p) if u=="player" and p=="责难" then SendChatMessage("成功施放技能责难","say") end end) f:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED") \
+END
+VER 3 010000000000001E "殉道者之光" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 殉道者之光
+END
+VER 3 0100000000000015 "爆发" "INV_MISC_QUESTIONMARK"
+#showtooltip 征伐 
+/use14 
+/cast 征伐
+END
+VER 3 0100000000000021 "牺牲" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 牺牲祝福
+END
+VER 3 0100000000000007 "牺牲" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [target=mouseover,help][target=target,help,exists][target=player] 牺牲祝福
+END
+VER 3 0100000000000018 "盘子" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [@mouseover] 复仇者之盾
+END
+VER 3 010000000000001A "神圣震击" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 神圣震击
+END
+VER 3 010000000000001C "赋予信仰" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 赋予信仰
+END
+VER 3 0100000000000019 "饰品" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/use 14
+END
+VER 3 0100000000000005 "鼠标圣疗" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/stopcasting
+/cast [target=mouseover,help][target=target,help,exists][target=player] 圣疗术
+END
+VER 3 0100000000000004 "鼠标审判" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [@mouseover,exists] 审判;审判
+END

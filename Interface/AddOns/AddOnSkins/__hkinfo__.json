@@ -1,0 +1,19 @@
+{
+	"search": 0,
+	"searchList": [
+		{
+			"img": "/app/image/anvilBlack.png",
+			"name": "AddOnSkins",
+			"fileName": "addonskins",
+			"downloadCount": "0",
+			"description": "Additional skins for AddOns to match the look of ElvUI"
+		},
+		{
+			"img": "https://media.forgecdn.net/avatars/thumbnails/207/726/64/64/636968768852676764.jpeg",
+			"name": "AddOnSkins Classic",
+			"fileName": "addonskins-classic",
+			"downloadCount": "0",
+			"description": "Collection of Skins for User Interfaces at Tukui.org"
+		}
+	]
+}

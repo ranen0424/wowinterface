@@ -1,0 +1,12 @@
+{
+	"search": 0,
+	"searchList": [
+		{
+			"img": "/app/image/anvilBlack.png",
+			"name": "Instance Portals",
+			"fileName": "instance-portals",
+			"downloadCount": "0",
+			"description": "Add dungeon/raid instance portal locations to the world map"
+		}
+	]
+}

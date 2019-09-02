@@ -1,0 +1,16 @@
+{
+	"search": 0,
+	"searchList": [
+		{
+			"img": "https://media.forgecdn.net/avatars/thumbnails/206/891/64/64/636961745133434041.jpeg",
+			"name": "MDGuildBest",
+			"fileName": "mdguildbest",
+			"downloadCount": "0",
+			"description": "Show weekly best of mythic+ dungeons in your guild."
+		}
+	],
+	"mark": "",
+	"ipMap": [],
+	"version": "MDGuildBest_2.2.zip",
+	"mapping": "MDGuildBest"
+}

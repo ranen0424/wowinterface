@@ -1,0 +1,30 @@
+{
+	"search": 0,
+	"searchList": [
+		{
+			"img": "https://media.forgecdn.net/avatars/thumbnails/61/566/64/64/636141656747300685.png",
+			"name": "World Quests List",
+			"fileName": "world-quests-list",
+			"downloadCount": "0",
+			"description": "World Quests List"
+		},
+		{
+			"img": "https://media.forgecdn.net/avatars/thumbnails/63/71/64/64/636142229813560811.jpg",
+			"name": "Angry World Quests",
+			"fileName": "angry-world-quests",
+			"downloadCount": "0",
+			"description": "Adds World Quests to the quest list"
+		},
+		{
+			"img": "https://media.forgecdn.net/avatars/thumbnails/61/638/64/64/636141668707692125.png",
+			"name": "Broker WorldQuests",
+			"fileName": "broker_worldquests",
+			"downloadCount": "0",
+			"description": "A data broker plugin that shows world quests in list form, so you can quickly..."
+		}
+	],
+	"mark": "",
+	"ipMap": [],
+	"version": "World Quests List v.8.9",
+	"mapping": "World Quests List"
+}

@@ -1,0 +1,70 @@
+VER 3 000000000000001C "7.0视野" "INV_MISC_QUESTIONMARK"
+/console cameraDistanceMaxFactor 2.6
+END
+VER 3 0000000000000033 "cd" "INV_MISC_QUESTIONMARK"
+/w BLCDY-战歌 组
+END
+VER 3 0000000000000037 "CollectMeRC" "INV_PET_BABYBLIZZARDBEAR"
+/tar 泥泞蛞蝓
+END
+VER 3 0000000000000039 "CollectMeRM" "ABILITY_MOUNT_BIGBLIZZARDBEAR"
+/cm rm
+END
+VER 3 0000000000000038 "CollectMeRT" "INV_PET_SCORCHEDSTONE"
+/cm rt
+END
+VER 3 0000000000000023 "Decursive" "INV_MISC_QUESTIONMARK"
+/stopcasting
+/cast [@mouseover,nomod,exists] 吞噬魔法;  [@mouseover,exists,mod:ctrl] 吞噬魔法; [@mouseover,exists,mod:shift] 吞噬魔法
+END
+VER 3 0000000000000016 "diaoxian" "INV_MISC_QUESTIONMARK"
+/script T,F=T or 0,F or CreateFrame("frame")if X then X=nil print("OFF.")else print("ON.") X=function()local t=GetTime()if t-T>1 then StaticPopup1Button2:Click()T=t end end end F:SetScript("OnUpdate",X)
+END
+VER 3 0000000000000012 "n+1" "INV_MISC_QUESTIONMARK"
+/focus [modifier:shift] 
+/stopmacro [modifier:shift] 
+/施放 [target=focus,help][help][target=targettarget,help][target=pet]误导 
+/script local u,t=UnitName,"focus";t=u(t);if not t then t=u("targettarget");end;if t then SendChatMessage("我已误导 "..t,"yell");end
+END
+VER 3 000000000000003A "RHS" "INV_MISC_QUESTIONMARK"
+#showtooltip 炉石
+/rhs check
+/cast 城镇传送之书
+END
+VER 3 0000000000000034 "坐骑" "INV_MISC_QUESTIONMARK"
+/run local M=function(a,b)SendChatMessage(b,"WHISPER",nil,a)end;M("郑矢娜-战歌","9")M("月色下的乞丐-辛达苟萨","44296")M("阿焦大做饭-希尔瓦娜斯","1")M("明家七风子-织亡者","1")M("王权富贵-海加尔","1")M("颜老师-风暴之鳞","1")M("罐子-冬寒","1")M("圣月游侠-艾森娜","9")
+END
+VER 3 0000000000000035 "坐骑2" "INV_MISC_QUESTIONMARK"
+/run local M=function(a,b)SendChatMessage(b,"WHISPER",nil,a)end;M("想静静-贫瘠之地","1")M("九筱妖-布兰卡德","1")M("叶果子-贫瘠之地","1")M("大舅-卡拉赞","1")M("娜芙雅丶薇薇-石爪峰","1")M("狼人贼-洛丹伦","1")
+END
+VER 3 0000000000000036 "坐骑3" "INV_MISC_QUESTIONMARK"
+/Y 版本1.400DX 祝红手！
+/W 颜老师-风暴之鳞 0
+/W 明家七风子-织亡者 0
+/W 罐子-冬寒 0
+/W 想静静-贫瘠之地 0
+/W 月色下的乞丐-辛达苟萨 0
+/W 阿焦大做饭-希尔瓦娜斯 0
+/W 郑矢娜-战歌 0
+/W 郑矢娜-战歌 1.400DX
+/W 九筱妖-布兰卡德 0
+/W 王权富贵-海加尔 0
+/W 叶果子-贫瘠之地 0
+/W 圣月游侠-艾森娜 0
+/W 大舅-卡拉赞 0
+/W 娜芙雅丶薇薇-石爪峰 0
+/W 狼人贼-洛丹伦 0
+END
+VER 3 0000000000000017 "打断" "INV_MISC_QUESTIONMARK"
+/run F=F or CreateFrame("frame")F:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")F:SetScript("OnEvent",function(_,_,_,e,_,_,p,_,_,_,n,_,_,_,_,_,_,s)if(e=="SPELL_INTERRUPT"and p=="角色名")then SendChatMessage("成功打断>"..n.."<的-"..s,"yell");end;end)
+/use 拳击
+END
+VER 3 0000000000000032 "炸矿" "INV_MISC_QUESTIONMARK"
+/cast 选矿
+/use 白金矿石
+/use 镍铜矿石
+END
+VER 3 0000000000000031 "爆发" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/castsequence reset=X 复仇十字军,神圣复仇者
+END

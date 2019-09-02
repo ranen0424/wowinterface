@@ -1,0 +1,7 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="squareMinimap.lua"/>
+	<Script file="buttonsMinimap.lua"/>
+	<Script file="whoClickMinimap.lua"/>
+	<Script file="enhancedWorldMap.lua"/>
+	<Script file="minimapInstance.lua"/>
+</Ui>

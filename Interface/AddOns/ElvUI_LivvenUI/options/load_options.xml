@@ -1,0 +1,21 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="core_c.lua"/>
+	<Script file="media_c.lua"/>
+	<Script file="skins_c.lua"/>
+	<Script file="actionbars_c.lua"/>
+	<Script file="armory_c.lua"/>
+	<Script file="bags_c.lua"/>
+	<Script file="blizzard_c.lua"/>
+	<Script file="chat_c.lua"/>
+	<Script file="combat_c.lua"/>
+	<Script file="maps_c.lua"/>
+	<Script file="misc_c.lua"/>
+	<Script file="nameplates_c.lua"/>
+	<Script file="quest_c.lua"/>
+	<Script file="raid_c.lua"/>
+	<Script file="tooltip_c.lua"/>
+	<Script file="unitframes_c.lua"/>
+	<Script file="filters_c.lua"/>
+	<Script file="cvar_c.lua"/>
+	<Script file="viiclickset_c.lua"/>
+</Ui>

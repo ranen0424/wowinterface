@@ -1,0 +1,6 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="LibRangeCheck-2.0\LibRangeCheck-2.0.lua"/>
+	<script file="LibCustomGlow-1.0\LibCustomGlow-1.0.lua"/>
+	<Include file="LibItemData-1.0\lib.xml"/>
+	<Include file="libInspect-1.0\libInspect.xml"/>
+</Ui>

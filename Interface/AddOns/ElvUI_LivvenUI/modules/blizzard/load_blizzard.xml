@@ -1,0 +1,7 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="Blizzard.lua"/>
+	<Script file="castbarTime.lua"/>
+	<Script file="minimapWheel.lua"/>
+	<Script file="blizzardMoveFrames.lua"/>
+	<Script file="enhancedFriendsList.lua"/>
+</Ui>

@@ -1,0 +1,8 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="announceSystem.lua"/>
+	<Script file="combatNotification.lua"/>
+	<Script file="raidMarkingKey.lua"/>
+	<Script file="raidMarkers.lua"/>
+	<Script file="autoMarkers.lua"/>
+	<Script file="setFocusKey.lua"/>
+</Ui>

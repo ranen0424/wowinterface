@@ -1,0 +1,9 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Include file="AtlasLootReverse\load_AtlasLootReverse.xml"/>
+	<Script file="tooltipIcon.lua"/>
+	<Script file="nameHover.lua"/>
+	<Script file="raidProgress.lua"/>
+	<Script file="flashingCursor.lua"/>
+	<Script file="daisyCosp.lua"/>
+	<!-- <Script file="noShiftKeyDown.lua"/> -->
+</Ui>

@@ -1,0 +1,23 @@
+## Interface: 80200
+## Author: L
+## Credits: Yocci, Elv, ABY, EUI, Repooc's ElvUI Shadow & Light, NickBock's BFA, houshuu's WindTools, Benik, Merathilis, klixtv & all AddOn Authors who inspired me.
+## Version: 1.3.1
+## Title: |cff9482c9ElvUI|r |cfff960d9LivvenUI|r
+## Notes: |cfff960d9For|r |cff9482c9ElvUI|r
+## RequiredDeps: ElvUI
+## DefaultState: Enabled
+## SavedVariables: TalentProfilesGlobalDB, TeamStatsDB, AddonPanelProfilesDB, AddonPanelServerDB, TinyInspectDB
+## SavedVariablesPerCharacter: TalentProfilesDB, TeamStatsPCDB, LTSM
+## X-ElvVersion: 11.00
+## X-Tukui-ProjectFolders: ElvUI_LivvenUI
+
+libs\load_libs.xml
+locales\load_locales.xml
+core\load_core.xml
+settings\load_settings.xml
+media\load_media.xml
+skins\load_skins.xml
+modules\load_modules.xml
+options\load_options.xml
+layout\layout.lua
+Bindings.xml

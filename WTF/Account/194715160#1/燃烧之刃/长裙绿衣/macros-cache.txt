@@ -1,0 +1,80 @@
+VER 3 0100000000000012 "双驱" "INV_MISC_QUESTIONMARK"
+#showtooltip 纯净术 
+/cast [help,nodead] 纯净术 
+/cast [harm,nodead] 驱散魔法
+END
+VER 3 0100000000000005 "吸血鬼" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,harm,nodead] [] 吸血鬼之触
+END
+VER 3 0100000000000010 "奶罩" "INV_MISC_QUESTIONMARK"
+#showtooltip 真言术：障
+/cast [@cursor] 真言术：障
+/stopspelltarget
+END
+VER 3 010000000000000A "快速" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 快速治疗
+END
+VER 3 010000000000000B "恢复" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 恢复
+END
+VER 3 0100000000000004 "惩击" "INV_MISC_QUESTIONMARK"
+#showtooltip 惩击
+/cast [harm][target=targettarget,harm] 惩击
+END
+VER 3 010000000000000C "愈合祷言" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 愈合祷言
+END
+VER 3 0100000000000015 "慰" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,harm,nodead] []真言术：慰(天赋)
+END
+VER 3 010000000000000D "拉人" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 信仰飞跃
+END
+VER 3 0100000000000008 "沉默" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,harm,nodead] [] 沉默
+END
+VER 3 0100000000000013 "炸人" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/targetenemy [noharm][dead] 
+/tar 暗影魔 
+/cast [help]闪光力场 
+/targetlasttarget [noharm][dead] 
+/cast 暗影魔
+END
+VER 3 0100000000000006 "痛" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,harm,nodead] [] 暗言术：痛
+END
+VER 3 0100000000000014 "绝望祷言" "INV_MISC_QUESTIONMARK"
+#showtooltips 绝望祷言
+/cast 绝望祷言
+/cast 治疗石
+END
+VER 3 010000000000000F "羽毛" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@player] 天堂之羽
+/stopspelltarge
+END
+VER 3 010000000000000E "翅膀" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 守护之魂
+END
+VER 3 0100000000000011 "苦修" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] []苦修
+END
+VER 3 0100000000000009 "静静" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help,nodead] [] 圣言术：静
+END
+VER 3 0100000000000007 "鼠标盾" "INV_MISC_QUESTIONMARK"
+#showtooltip 真言术：盾
+/cast [@mouseover,help] []真言术：盾
+END

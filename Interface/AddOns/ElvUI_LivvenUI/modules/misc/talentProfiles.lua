@@ -1,0 +1,456 @@
+-- -- 来源：EUI
+-- -- 作者：EUI
+-- -- 链接：
+-- -- 修改：L
+-- local LUI, T, E, L, V, P, G = unpack(select(2, ...))
+-- if LUI:CheckDB("db", "modules", "misc", "general", "meetingStonePlus", "enable") then return end
+-- local LMI = E:GetModule("LuiMisc")
+-- local S = E:GetModule("Skins")
+
+-- local const__numTalentCols = 3
+-- local cdn, playerClass, cid = T.UnitClass("player")
+
+-- local DB = {}
+-- local L = {}
+
+-- if T.GetLocale() == "zhCN" then
+--     L["Error: Too many talents selected"] = "错误：太多天赋被选项"
+--     L["Added a new profile: "] = "添加新配置"
+--     L["Unable to load the selected profile"] = "不能载入选择的配置"
+--     L["Saved profile: "] = "保存配置"
+--     L["Removed a profile: "] = "移除一个配置"
+--     L["Enter Profile Name: "] = "输入配置名称: "
+--     L["Save"] = "保存"
+--     L["Cancel"] = "取消"
+--     L["Do you want to remove the profile '%s'?"] = "你想移除配置文件 '%s'?"
+--     L["Yes"] = "是"
+--     L["No"] = "否"
+--     L["Unable to load talent configuration for the selected profile"] = "不能截入选择配置中的天赋设置"
+--     L["Activated profile: "] = "已激活配置: "
+--     L["Add new profile"] = "添加新配置"
+--     L["Apply"] = "应用"
+--     L["Save"] = "保存"
+--     L["Remove"] = "移除"
+--     L["Migration: Starting"] = "迁移：开始"
+--     L["Migration: Done: No specs found for this character"] = "迁移：当前角色无天赋"
+--     L["Migration: Info: No profiles found for spec #"] = "迁移：当前专精无配置 #"
+--     L["Migration: Info: Migrated profile "] = "迁移：合并配置 "
+--     L["Migration: Done: Successfully migrated "] = "迁移：成功合并 "
+-- elseif T.GetLocale() == "zhTW" then
+--     L["Error: Too many talents selected"] = "錯誤：太多天賦被選項"
+--     L["Added a new profile: "] = "添加新配置"
+--     L["Unable to load the selected profile"] = "不能載入選擇的配置"
+--     L["Saved profile: "] = "保存配置"
+--     L["Removed a profile: "] = "移除一個配置"
+--     L["Enter Profile Name: "] = "輸入配置名稱: "
+--     L["Save"] = "保存"
+--     L["Cancel"] = "取消"
+--     L["Do you want to remove the profile '%s'?"] = "你想移除設定檔 '%s'?"
+--     L["Yes"] = "是"
+--     L["No"] = "否"
+--     L["Unable to load talent configuration for the selected profile"] = "不能截入選擇配置中的天賦設置"
+--     L["Activated profile: "] = "已啟動配置: "
+--     L["Add new profile"] = "添加新配置"
+--     L["Apply"] = "應用"
+--     L["Save"] = "保存"
+--     L["Remove"] = "移除"
+--     L["Migration: Starting"] = "遷移：開始"
+--     L["Migration: Done: No specs found for this character"] = "遷移：當前角色無天賦"
+--     L["Migration: Info: No profiles found for spec #"] = "遷移：當前專精無配置 #"
+--     L["Migration: Info: Migrated profile "] = "遷移：合併配置 "
+--     L["Migration: Done: Successfully migrated "] = "遷移：成功合併"
+-- else
+--     L["Error: Too many talents selected"] = "Error: Too many talents selected"
+--     L["Added a new profile: "] = "Added a new profile: "
+--     L["Unable to load the selected profile"] = "Unable to load the selected profile"
+--     L["Saved profile: "] = "Saved profile: "
+--     L["Removed a profile: "] = "Removed a profile: "
+--     L["Enter Profile Name: "] = "Enter Profile Name: "
+--     L["Save"] = "Save"
+--     L["Cancel"] = "Cancel"
+--     L["Do you want to remove the profile '%s'?"] = "Do you want to remove the profile '%s'?"
+--     L["Yes"] = "Yes"
+--     L["No"] = "No"
+--     L["Unable to load talent configuration for the selected profile"] = "Unable to load talent configuration for the selected profile"
+--     L["Activated profile: "] = "Activated profile: : "
+--     L["Add new profile"] = "Add new profile"
+--     L["Apply"] = "Apply"
+--     L["Save"] = "Save"
+--     L["Remove"] = "Remove"
+--     L["Migration: Starting"] = "Migration: Starting"
+--     L["Migration: Done: No specs found for this character"] = "Migration: Done: No specs found for this character"
+--     L["Migration: Info: No profiles found for spec #"] = "Migration: Info: No profiles found for spec #"
+--     L["Migration: Info: Migrated profile "] = "Migration: Info: Migrated profile "
+--     L["Migration: Done: Successfully migrated "] = "Migration: Done: Successfully migrated "
+-- end
+
+-- function table.length(t)
+--     local count = 0
+--     for k, v in T.pairs(t) do
+--         count = count + 1
+--     end
+--     return count
+-- end
+
+-- function DB:Verify()
+--     if TalentProfilesGlobalDB == nil then TalentProfilesGlobalDB = {} end
+--     if TalentProfilesGlobalDB[playerClass] == nil then TalentProfilesGlobalDB[playerClass] = {} end
+--     if TalentProfilesGlobalDB[playerClass].specs == nil then TalentProfilesGlobalDB[playerClass].specs = {} end
+--     for i = 1, T.GetNumSpecializations() do
+--         if TalentProfilesGlobalDB[playerClass].specs[i] == nil then TalentProfilesGlobalDB[playerClass].specs[i] = {} end
+--         if TalentProfilesGlobalDB[playerClass].specs[i].profiles == nil then TalentProfilesGlobalDB[playerClass].specs[i].profiles = {} end
+--     end
+-- end
+
+-- function DB:GetProfile(index)
+--     return TalentProfilesGlobalDB[playerClass].specs[T.GetSpecialization()].profiles[index]
+-- end
+
+-- function DB:GetAllProfiles()
+--     return TalentProfilesGlobalDB[playerClass].specs[T.GetSpecialization()].profiles
+-- end
+
+-- function DB:InsertProfile(profile)
+--     T.table_insert(TalentProfilesGlobalDB[playerClass].specs[T.GetSpecialization()].profiles, profile)
+-- end
+
+-- function DB:RemoveProfile(index)
+--     T.table_remove(TalentProfilesGlobalDB[playerClass].specs[T.GetSpecialization()].profiles, index)
+-- end
+
+-- function GetTalentInfos()
+--     local talentInfos = {}
+--     local k = 1
+--     for i = 1, T.GetMaxTalentTier() do
+--         for j = 1, const__numTalentCols do
+--             local talentID, name, texture, selected, available, spellid, tier, column = T.GetTalentInfo(i, j, T.GetActiveSpecGroup())
+--             talentInfos[k] = {}
+--             talentInfos[k].talentID = talentID
+--             talentInfos[k].name = name
+--             talentInfos[k].texture = texture
+--             talentInfos[k].selected = selected
+--             talentInfos[k].available = available
+--             talentInfos[k].spellid = spellid
+--             talentInfos[k].tier = tier
+--             talentInfos[k].column = column
+--             k = k + 1
+--         end
+--     end
+--     return talentInfos
+-- end
+
+-- function AddProfile(name)
+--     DB:Verify()
+--     local talentInfos = GetTalentInfos()
+--     local profile = {}
+--     profile.name = name
+--     profile.talents = {}
+--     local i = 1
+--     for k, v in T.pairs(talentInfos) do
+--         if v.selected == true then
+--             profile.talents[i] = v.talentID
+--             i = i + 1
+--         end
+--     end
+--     if i > 8 then
+--         LUI:Print(L["Error: Too many talents selected"])
+--     end
+--     DB:InsertProfile(profile)
+--     BuildFrame()
+--     LUI:Print(L["Added a new profile: "] .. "'" .. profile.name .. "'")
+-- end
+
+-- function SaveProfile(index)
+--     if table.length(DB:GetAllProfiles()) == 0 then
+--         return
+--     end
+    
+--     if index ~= "new" then
+--         local profile = DB:GetProfile(index)
+--         if profile == nil then
+--             LUI:Print(L["Unable to load the selected profile"])
+--             return
+--         end
+        
+--         local talentInfos = GetTalentInfos()
+--         local i = 1
+--         for k, v in T.pairs(talentInfos) do
+--             if v.selected == true then
+--                 profile.talents[i] = v.talentID
+--                 i = i + 1
+--             end
+--         end
+--         LUI:Print(L["Saved profile: "] .. "'" .. profile.name .. "'")
+--     end
+-- end
+
+-- function PopupHandler_AddProfile(sender)
+--     AddProfile(sender.editBox:GetText())
+-- end
+
+-- function RemoveProfile(index)
+--     local key = nil
+--     local i = 1
+--     for k, v in T.pairs(DB:GetProfile(index)) do
+--         if i == index then
+--             key = k
+--         end
+--         i = i + 1
+--     end
+--     local name = DB:GetProfile(index).name
+--     DB:RemoveProfile(index)
+--     BuildFrame()
+--     LUI:Print(L["Removed a profile: "] .. "'" .. name .. "'")
+-- end
+
+-- function PopupHandler_RemoveProfile(sender)
+--     RemoveProfile(TalentProfiles_profilesDropDown.selectedID)
+-- end
+
+-- StaticPopupDialogs["TALENTPROFILES_ADD_PROFILE"] = {
+--     text = L["Enter Profile Name: "],
+--     button1 = L["Save"],
+--     button2 = L["Cancel"],
+--     OnAccept = PopupHandler_AddProfile,
+--     timeout = 0,
+--     whileDead = true,
+--     hideOnEscape = true,
+--     preferredIndex = 3,
+--     hasEditBox = true,
+-- }
+
+-- function StaticPopupShow_Add()
+--     StaticPopup_Show("TALENTPROFILES_ADD_PROFILE")
+-- end
+
+-- StaticPopupDialogs["TALENTPROFILES_REMOVE_PROFILE"] = {
+--     text = L["Do you want to remove the profile '%s'?"],
+--     button1 = L["Yes"],
+--     button2 = L["No"],
+--     OnAccept = PopupHandler_RemoveProfile,
+--     timeout = 0,
+--     whileDead = true,
+--     hideOnEscape = true,
+--     preferredIndex = 3,
+-- }
+-- function StaticPopupShow_Remove()
+--     local index = TalentProfiles_profilesDropDown.selectedID
+--     local name = DB:GetProfile(index).name
+--     StaticPopup_Show("TALENTPROFILES_REMOVE_PROFILE", name)
+-- end
+
+-- function ActivateProfile(index)
+--     if index ~= "new" then
+--         local profile = DB:GetProfile(index)
+--         if profile == nil or profile.talents == nil then
+--             LUI:Print(L["Unable to load talent configuration for the selected profile"])
+--             return
+--         end
+--         for i = 1, T.GetMaxTalentTier() do
+--             LearnTalent(profile.talents[i])
+--         end
+--         LUI:Print(L["Activated profile: "] .. "'" .. profile.name .. "'")
+--     end
+-- end
+
+-- function Handler_ActivateProfile(sender)
+--     DB:Verify()
+--     if table.length(DB:GetAllProfiles()) == 0 then
+--         return
+--     end
+--     ActivateProfile(TalentProfiles_profilesDropDown.selectedID)
+-- end
+
+-- function Handler_SaveProfile(sender)
+--     SaveProfile(TalentProfiles_profilesDropDown.selectedID)
+-- end
+
+-- function Handler_RemoveProfile(sender)
+--     DB:Verify()
+--     if table.length(DB:GetAllProfiles()) == 0 then
+--         return
+--     end
+--     StaticPopupShow_Remove()
+-- end
+
+-- function ProfilesDropDown_OnClick(sender)
+--     UIDropDownMenu_SetSelectedID(TalentProfiles_profilesDropDown, sender:GetID())
+-- end
+
+-- function ProfilesDropDown_OnClick_NewProfile(sender)
+--     StaticPopupShow_Add()
+-- end
+
+-- function ProfilesDropDown_Initialise(sender, level)
+--     DB:Verify()
+--     local items = DB:GetAllProfiles()
+--     local i = 1
+--     for k, v in T.pairs(items) do
+--         local info = UIDropDownMenu_CreateInfo()
+--         info.text = v.name
+--         info.value = i
+--         info.func = ProfilesDropDown_OnClick
+--         UIDropDownMenu_AddButton(info, level)
+--         i = i + 1
+--     end
+    
+--     local info = UIDropDownMenu_CreateInfo()
+--     info.text = " " .. L["Add new profile"]
+--     info.value = "new"
+--     info.func = ProfilesDropDown_OnClick_NewProfile
+--     info.rgb = {1.0, 0.0, 1.0, 1.0}
+--     UIDropDownMenu_AddButton(info, level)
+-- end
+
+-- function BuildFrame()
+--     local btn_sepX = 10
+--     local btn_offsetY = 0
+--     local btn_width = 80
+--     local btn_height = 23
+    
+--     local mainFrame = TalentProfiles_main
+--     if TalentProfiles_main == nil then
+--         mainFrame = T.CreateFrame("Frame", "TalentProfiles_main", PlayerTalentFrame)
+--         mainFrame:SetSize(PlayerTalentFrame.TopTileStreaks:GetWidth(), PlayerTalentFrame.TopTileStreaks:GetHeight())
+--         if ElvUI then
+--             mainFrame:SetPoint("CENTER", PlayerTalentFrame.TopTileStreaks, "CENTER", 0, 0)
+--         else
+--             mainFrame:SetPoint("TOPLEFT", PlayerTalentFrame.TopTileStreaks, "TOPLEFT", 45, -7)
+--         end
+--     end
+    
+--     local dropdown = TalentProfiles_profilesDropDown
+--     if TalentProfiles_profilesDropDown == nil then
+--         dropdown = T.CreateFrame("Button", "TalentProfiles_profilesDropDown", TalentProfiles_main, "UIDropDownMenuTemplate")
+--         if ElvUI then
+--             dropdown:SetPoint("TOPLEFT", TalentProfiles_main, "TOPLEFT", 60, -13)
+--             if E.db.lui.modules.misc.general.talentProfiles["ElvUISkins"] then
+--                 S:HandleDropDownBox(dropdown, 165)
+--             end
+--             TalentProfiles_profilesDropDownButton:SetWidth(TalentProfiles_profilesDropDownButton:GetHeight())
+--             TalentProfiles_profilesDropDown:SetScript("OnClick", function(...)TalentProfiles_profilesDropDownButton:Click() end)
+--             TalentProfiles_profilesDropDown:SetHeight(btn_height)
+--         else
+--             UIDropDownMenu_SetWidth(dropdown, 125)
+--             UIDropDownMenu_SetButtonWidth(dropdown, 125)
+--             dropdown:SetPoint("TOPLEFT", TalentProfiles_main, "TOPLEFT", 0, 0)
+--         end
+--     end
+--     UIDropDownMenu_Initialize(dropdown, ProfilesDropDown_Initialise)
+--     UIDropDownMenu_SetSelectedID(dropdown, 1)
+--     UIDropDownMenu_JustifyText(dropdown, "LEFT")
+--     dropdown:Show()
+    
+--     local btnApply = TalentProfiles_btnApply
+--     if TalentProfiles_btnApply == nil then
+--         btnApply = T.CreateFrame("Button", "TalentProfiles_btnApply", TalentProfiles_main, "UIPanelButtonTemplate")
+--         btnApply:SetSize(btn_width, btn_height)
+--         btnApply:SetText(L["Apply"])
+--         if ElvUI then
+--             if E.db.lui.modules.misc.general.talentProfiles["ElvUISkins"] then
+--                 btnApply:SetPoint("TOPLEFT", dropdown, "TOPRIGHT", 0, -3)
+--                 S:HandleButton(btnApply)
+--             else
+--                 btnApply:SetPoint("TOPLEFT", dropdown, "TOPRIGHT", 120, -3)
+--             end
+--         else
+--             btnApply:SetPoint("TOPLEFT", TalentProfiles_profilesDropDown, "TOPRIGHT", btn_sepX, -2)
+--         end
+--         btnApply:SetScript("OnClick", Handler_ActivateProfile)
+--         btnApply:Show()
+--     end
+--     local btnSave = TalentProfiles_btnSave
+--     if TalentProfiles_btnSave == nil then
+--         btnSave = T.CreateFrame("Button", "TalentProfiles_btnSave", TalentProfiles_main, "UIPanelButtonTemplate")
+--         btnSave:SetSize(btn_width, btn_height)
+--         btnSave:SetText(L["Save"])
+--         if ElvUI then
+--             btnSave:SetPoint("TOPLEFT", btnApply, "TOPRIGHT", btn_sepX, 0)
+--             if E.db.lui.modules.misc.general.talentProfiles["ElvUISkins"] then
+--                 S:HandleButton(btnSave)
+--             end
+--         else
+--             btnSave:SetPoint("TOPLEFT", btnApply, "TOPRIGHT", btn_sepX, 0)
+--         end
+--         btnSave:SetScript("OnClick", Handler_SaveProfile)
+--         btnSave:Show()
+--     end
+--     local btnRemove = TalentProfiles_btnRemove
+--     if TalentProfiles_btnRemove == nil then
+--         btnRemove = T.CreateFrame("Button", "TalentProfiles_btnRemove", TalentProfiles_main, "UIPanelButtonTemplate")
+--         btnRemove:SetSize(btn_width, btn_height)
+--         btnRemove:SetText(L["Remove"])
+--         if ElvUI then
+--             btnRemove:SetPoint("TOPLEFT", btnSave, "TOPRIGHT", btn_sepX, 0)
+--             if E.db.lui.modules.misc.general.talentProfiles["ElvUISkins"] then
+--                 S:HandleButton(btnRemove)
+--             end
+--         else
+--             btnRemove:SetPoint("TOPLEFT", btnSave, "TOPRIGHT", btn_sepX, 0)
+--         end
+--         btnRemove:SetScript("OnClick", Handler_RemoveProfile)
+--         btnRemove:Show()
+--     end
+-- end
+
+-- function LMI:ToggleTalentFrame()
+--     self.hooks.ToggleTalentFrame()
+    
+--     if PlayerTalentFrame == nil then
+--         return
+--     end
+    
+--     local selectedTab = T.PanelTemplates_GetSelectedTab(PlayerTalentFrame)
+--     if selectedTab == 2 then
+--         BuildFrame()
+--         TalentProfiles_main:SetShown(PlayerTalentFrame:IsVisible())
+--     end
+-- end
+
+-- function LMI:PanelTemplates_SetTab(...)
+--     self.hooks.PanelTemplates_SetTab(...)
+--     if PlayerTalentFrame == nil then
+--         return
+--     end
+--     local selectedTab = T.PanelTemplates_GetSelectedTab(PlayerTalentFrame)
+--     if selectedTab == 2 then
+--         BuildFrame()
+--         TalentProfiles_main:Show()
+--     else
+--         if TalentProfiles_main ~= nil then
+--             TalentProfiles_main:Hide()
+--         end
+--     end
+-- end
+
+-- function DB:Migrate()
+--     if TalentProfilesDB ~= nil then
+--         LUI:Print(L["Migration: Starting"])
+--         if TalentProfilesDB.specs == nil then
+--             LUI:Print(L["Migration: Done: No specs found for this character"])
+--             TalentProfilesDB = nil
+--             return
+--         end
+--         local count = 0
+--         for k_spec, spec in T.pairs(TalentProfilesDB.specs) do
+--             if spec.profiles == nil then
+--                 LUI:Print(L["Migration: Info: No profiles found for spec #"] .. k)
+--             else
+--                 for k_profile, profile in T.pairs(spec.profiles) do
+--                     T.table_insert(TalentProfilesGlobalDB[playerClass].specs[k_spec].profiles, profile)
+--                     LUI:Print(L["Migration: Info: Migrated profile "] .. profile.name)
+--                     count = count + 1
+--                 end
+--             end
+--         end
+--         TalentProfilesDB = nil
+--         LUI:Print(L["Migration: Done: Successfully migrated "] .. count .. " profiles")
+--     end
+-- end
+
+-- function LMI:LoadTalentProfiles()
+--     DB:Verify()
+--     DB:Migrate()
+--     self:RawHook("ToggleTalentFrame", true)
+--     self:RawHook("PanelTemplates_SetTab", true)
+-- end

@@ -1,0 +1,5 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="BattleforAzeroth.lua"/>
+	<Script file="LEGION.lua"/>
+	<Script file="WarlordsofDraenor.lua"/>
+</Ui>

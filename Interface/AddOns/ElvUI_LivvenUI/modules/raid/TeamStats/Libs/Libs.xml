@@ -1,0 +1,8 @@
+<Ui>
+<Include file="LibInspectLess-1.0\LibInspectLess-1.0.lua"/>
+<Include file="LibItemUpgradeInfo-1.0\Core.lua"/>
+<Include file="LibDBIcon-1.0\lib.xml"/>
+
+<Include file="UTF8\utf8data.lua"/>
+<Include file="UTF8\utf8.lua"/>
+</Ui>

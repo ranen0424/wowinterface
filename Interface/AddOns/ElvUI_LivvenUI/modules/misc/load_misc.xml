@@ -1,0 +1,23 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="misc.lua"/>
+	<Script file="addonpanel.lua"/>
+	<Script file="alreadyKnown.lua"/>
+	<Script file="autoDelete.lua"/>
+	<Script file="autoRelease.lua"/>
+	<Script file="autoScreenShoot.lua"/>
+	<Script file="autoRepChange.lua"/>
+	<Script file="fastLoot.lua"/>
+	<Script file="inviteGroup.lua"/>
+	<Script file="refixStyle.lua"/>
+	<Script file="rightButtonMenu.lua"/>
+	<Script file="setPoi.lua"/>
+	<!-- <Script file="talentProfiles.lua"/> -->
+	<Script file="talkingHead.lua"/>
+	<Script file="meetingStonePlus.lua"/>
+	<Script file="lfgMemberInfo.lua"/>
+	<Script file="raidUtility.lua"/>
+	<Script file="repPeaksTimes.lua"/>
+	<Include file="autoWorkOrders\load_autoWorkOrders.xml"/>
+	<Include file="azerite\load_azerite.xml"/>
+	<!-- <Include file="lootSpecManager\load_lootSpecManager.xml"/> -->
+</Ui>

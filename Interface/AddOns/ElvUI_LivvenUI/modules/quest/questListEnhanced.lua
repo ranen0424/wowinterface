@@ -1,0 +1,51 @@
+-- -- 来源：S&L
+-- -- 作者：
+-- -- 链接：
+-- -- 修改：L
+-- local LUI, T, E, L, V, P, G = unpack(select(2, ...))
+-- if LUI:CheckDB("db", "modules", "quest", "questListEnhanced", "enable") then return end
+
+-- local LQU = E:GetModule("LuiQuest")
+
+-- local _G = _G
+
+-- local function SetBlockHeader_hook()
+--     if not E.db.lui.modules.quest.questListEnhanced.questLevel["titleLevel"] then return end
+--     for i = 1, GetNumQuestWatches() do
+--         local questID, title, questLogIndex, numObjectives, requiredMoney, isComplete, startEvent, isAutoComplete, failureTime, timeElapsed, questType, isTask, isStory, isOnMap, hasLocalPOI = GetQuestWatchInfo(i)
+--         if not questID then
+--             break
+--         end
+--         local oldBlock = QUEST_TRACKER_MODULE:GetExistingBlock(questID)
+--         if oldBlock then
+--             local questLevel = select(2, T.GetQuestLogTitle(questLogIndex))
+--             local newTitle = title
+--             if questLevel ~= 120 and not E.db.lui.modules.quest.questListEnhanced.questLevel["ignoreHighLevel"] then
+--                 newTitle = "[" .. questLevel .. "] " .. title
+--             end
+--             QUEST_TRACKER_MODULE:SetStringText(oldBlock.HeaderText, newTitle, nil, OBJECTIVE_TRACKER_COLOR["Header"])
+--         end
+--     end
+-- end
+
+-- local function QuestInfo_hook(template, parentFrame, acceptButton, material, mapView)
+--     if not E.db.lui.modules.quest.questListEnhanced.questLevel["titleLevel"] then return end
+--     local elementsTable = template.elements
+--     for i = 1, #elementsTable, 3 do
+--         if elementsTable[i] == QuestInfo_ShowTitle then
+--             if QuestInfoFrame.questLog then
+--                 local questLogIndex = T.GetQuestLogSelection()
+--                 local level = select(2, T.GetQuestLogTitle(questLogIndex))
+--                 if level ~= 0 then
+--                     local newTitle = "[" .. level .. "] " .. QuestInfoTitleHeader:GetText()
+--                     QuestInfoTitleHeader:SetText(newTitle)
+--                 end
+--             end
+--         end
+--     end
+-- end
+
+-- function LQU:LoadQuestListEnhanced()
+--     T.hooksecurefunc(QUEST_TRACKER_MODULE, "Update", SetBlockHeader_hook)
+--     T.hooksecurefunc("QuestInfo_Display", QuestInfo_hook)
+-- end

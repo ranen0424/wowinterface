@@ -1,0 +1,5 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Include file="filters.lua"/>
+	<Include file="infoFilter.lua"/>
+	<Include file="pmFilter.lua"/>
+</Ui>

@@ -1,0 +1,10 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<script file="core.lua"/>
+	<script file="toolkit.lua"/>
+	<script file="dropdown.lua"/>
+	<Script file="changelog.lua"/>
+	<script file="splashScreen.lua"/>
+	<script file="gamemenu.lua"/>
+	<script file="staticpopup.lua"/>
+	<!-- <Script file="compatibility.lua"/> -->
+</Ui>

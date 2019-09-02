@@ -1,0 +1,9 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+    <Script file="InspectCore.lua"/>
+    <Script file="InspectUnit.lua"/>
+    <Script file="PluginGreenState.lua"/>
+    <Script file="InspectUnitGemAndEnchant.lua"/>
+    <Script file="InspectUnitSpecialization.lua"/>
+    <Script file="InspectParty.lua"/>
+    <Script file="equipmentFlyout.lua"/>
+</Ui>

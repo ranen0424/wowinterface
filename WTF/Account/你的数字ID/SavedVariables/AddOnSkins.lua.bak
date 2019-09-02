@@ -1,0 +1,56 @@
+
+AddOnSkinsDB = {
+	["profileKeys"] = {
+		["無剣道 - 血色十字军"] = "Default",
+		["墨夜之曦 - 血色十字军"] = "Default",
+		["Minuitsun - 血色十字军"] = "Default",
+		["烟总 - 拉文凯斯"] = "Default",
+		["路曦菲尔 - 拉文凯斯"] = "Default",
+		["孤仒狼 - 拉文凯斯"] = "Default",
+		["Midnightsun - 安苏"] = "Default",
+		["烟亦舞 - 血色十字军"] = "MerathilisUI",
+		["Eternalsun - 血色十字军"] = "Default",
+		["Midnightsun - 白银之手"] = "Default",
+		["费列罗巧克牛 - 拉文凯斯"] = "Default",
+		["Spgg - 白银之手"] = "Default",
+		["Ceshiy - 血色十字军"] = "Default",
+		["Eternalyg - 血色十字军"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["DBMRadarTrans"] = true,
+			["DBMSkinHalf"] = true,
+			["WeakAuras"] = false,
+			["ChangeLogVersion"] = 4.21,
+		},
+		["MerathilisUI"] = {
+			["WeakAuraAuraBar"] = true,
+			["SkinTemplate"] = "MerathilisUI",
+			["ElvUISkinModule"] = true,
+			["DBMRadarTrans"] = true,
+			["SkadaBackdrop"] = false,
+			["EmbedRight"] = "",
+			["ChangeLogVersion"] = 4.21,
+			["EmbedRightChat"] = false,
+			["EmbedLeft"] = "",
+			["OmenBackdrop"] = false,
+			["BackgroundTexture"] = "Duffed",
+			["EmbedSystemMessage"] = false,
+			["Details"] = false,
+			["ParchmentRemover"] = false,
+			["DetailsBackdrop"] = false,
+			["ThinBorder"] = false,
+			["DBMFont"] = "Expressway",
+			["StatusBarTexture"] = "Duffed",
+			["WeakAuraIconCooldown"] = true,
+			["MiscFixes"] = true,
+			["RecountBackdrop"] = false,
+			["WeakAuras"] = false,
+			["DBMSkinHalf"] = true,
+		},
+	},
+}
+AddOnSkinsDS = {
+	[4.21] = {
+	},
+}

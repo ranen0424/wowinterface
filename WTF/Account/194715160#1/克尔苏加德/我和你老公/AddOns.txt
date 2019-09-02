@@ -1,0 +1,4 @@
+BigWigs_Plugins: enabled
+BigWigs_Core: enabled
+BigWigs_Options: enabled
+WeakAurasCompanion: enabled

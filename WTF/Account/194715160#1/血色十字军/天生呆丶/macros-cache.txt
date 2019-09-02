@@ -1,0 +1,48 @@
+VER 3 0100000000000002 "daoshu " "136105"
+/dbm pull 5
+END
+VER 3 0100000000000012 "大跳" "INV_MISC_QUESTIONMARK"
+#showtooltip 英勇飞跃
+/cast [@cursor] 英勇飞跃
+END
+VER 3 0100000000000015 "大风车" "INV_MISC_QUESTIONMARK"
+#showtooltip 剑刃风暴
+/use 远古愤怒之结
+/cast 剑刃风暴
+END
+VER 3 0100000000000014 "天神爆发" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast 天神下凡
+/use 14
+/use 辉煌蓝宝石
+END
+VER 3 0100000000000018 "灭战" "INV_MISC_QUESTIONMARK"
+#showtooltip 灭战者
+/use 13
+/cast 灭战者
+END
+VER 3 0100000000000016 "焦点" "INV_MISC_QUESTIONMARK"
+#showtooltip拳击
+/cast [target=focus,exists] 拳击;拳击
+END
+VER 3 0100000000000017 "焦点" "INV_MISC_QUESTIONMARK"
+#showtooltip风暴之锤
+/cast [target=focus,exists] 风暴之锤;风暴之锤
+END
+VER 3 0100000000000013 "爆发" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast 鲁莽
+/use 活性血瓶
+/use 辉煌蓝宝石
+END
+VER 3 010000000000000A "盾墙" "INV_MISC_QUESTIONMARK"
+#showtooltip 盾墙 
+/cancelaura 剑刃风暴
+/cast 盾墙
+/cast 防御姿态
+END
+VER 3 010000000000000B "破蛋" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [target=mouseover,exists] 破胆怒吼;破胆怒吼
+/stopattack
+END

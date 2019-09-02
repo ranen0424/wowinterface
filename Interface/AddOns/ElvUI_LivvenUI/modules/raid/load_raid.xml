@@ -1,0 +1,4 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="raidRoleIcons.lua"/>
+	<Include file="TeamStats\load_TeamStats.xml"/>
+</Ui>

@@ -1,0 +1,23 @@
+{
+	"search": 0,
+	"searchList": [
+		{
+			"img": "/app/image/anvilBlack.png",
+			"name": "BugGrabber",
+			"fileName": "bug-grabber",
+			"downloadCount": "0",
+			"description": "Grabs bugs for the bug sack."
+		},
+		{
+			"img": "/app/image/anvilBlack.png",
+			"name": "Bugger",
+			"fileName": "bugger",
+			"downloadCount": "0",
+			"description": "Shows the errors captured by !BugGrabber."
+		}
+	],
+	"mark": "",
+	"ipMap": [],
+	"version": "8.2.0",
+	"mapping": "BugGrabber"
+}

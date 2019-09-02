@@ -1,0 +1,45 @@
+VER 3 010000000000000A "a1" "INV_MISC_QUESTIONMARK"
+/click ClassTrainerFrameSkillStepButton
+/click ClassTrainerTrainButton
+/cast 钓鱼
+END
+VER 3 0100000000000008 "刃舞" "INV_MISC_QUESTIONMARK"
+#showtooltip 刃舞
+/castsequence [nochanneling] 刃舞
+END
+VER 3 0100000000000003 "只想" "INV_MISC_QUESTIONMARK"
+#showtooltip 锁链咒符
+/cast [@cursor]锁链咒符
+END
+VER 3 0100000000000006 "地狱火" "INV_MISC_QUESTIONMARK"
+#showtooltip 地狱火撞击
+/cast [@cursor]地狱火撞击
+END
+VER 3 0100000000000007 "弹幕" "INV_MISC_QUESTIONMARK"
+#showtooltip 邪能弹幕
+/use 唤风者之赐
+/castsequence [nochanneling] 邪能弹幕
+END
+VER 3 0100000000000004 "指向" "INV_MISC_QUESTIONMARK"
+#showtooltip 恶魔变形 
+/cast [@cursor]恶魔变形
+/use 13
+END
+VER 3 0100000000000001 "指向" "INV_MISC_QUESTIONMARK"
+#showtooltip 悲苦咒符
+/cast [@cursor]悲苦咒符
+END
+VER 3 0100000000000005 "指向" "INV_MISC_QUESTIONMARK"
+#showtooltip 沉默咒符
+/cast [@cursor]沉默咒符
+END
+VER 3 0100000000000002 "指向" "INV_MISC_QUESTIONMARK"
+#showtooltip 烈焰咒符
+/cast [@cursor]烈焰咒符
+END
+VER 3 0100000000000009 "无敌" "INV_MISC_QUESTIONMARK"
+#showtooltip 虚空行走
+/stopcasting
+/cancelAura 虚空行走
+/cast 虚空行走
+END

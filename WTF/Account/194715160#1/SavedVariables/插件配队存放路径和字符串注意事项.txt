@@ -1,0 +1,20 @@
+E:\Program Files\World of Warcraft\_retail_\WTF\Account\数字#1\SavedVariables
+以上：你的魔兽存放目录\_retail_\WTF\Account\你的账号\SavedVariables
+
+
+复制这个文件夹里 的
+Rematch.lua  Rematch.lua.bak；(配队文件以及备份)
+tdBattlePetScript.lua,tdBattlePetScript.lua.bak(字符串文件以及备份)
+zAutoLoadPetTeam_Rematch.lua,zAutoLoadPetTeam_Rematch.lua.bak(换队参数文件以及备份)
+放其他地方备份。
+
+放我的以上6个文件进以上文件夹。
+
+
+注意如果新装字符串初期有字符串缺失，重新再复制一遍tdBattlePetScript.lua,tdBattlePetScript.lua.bak
+这两个文件，因为第一次装插件可能被还原到初始状态。
+
+请务必阅读第一页第一个的备注
+
+
+

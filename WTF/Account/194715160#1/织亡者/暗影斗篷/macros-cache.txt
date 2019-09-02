@@ -1,0 +1,53 @@
+VER 3 0100000000000007 "嫁祸" "INV_MISC_QUESTIONMARK"
+/focus [modifier:shift] 
+/stopmacro [modifier:shift] 
+/施放 [target=focus,help][help][target=targettarget,help][target=pet]嫁祸诀窍 
+/script local u,t=UnitName,"focus";t=u(t);if not t then t=u("targettarget");end;if t then SendChatMessage("我已嫁祸 "..t,"yell");end
+END
+VER 3 0100000000000001 "抓隐身" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cleartarget
+/script SetCVar("targetNearestDistance",10)
+/targetenemy [noharm][dead][noexists]
+/script SetCVar("targetNearestDistance",50)
+/cast 闷棍 
+END
+VER 3 0100000000000008 "暗影步" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [@mouseover,help][@mouseover,exists,harm][] 暗影步
+END
+VER 3 010000000000000E "消失" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/Stopattack
+/cast 消失
+END
+VER 3 010000000000001A "潜行" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast !潜行
+END
+VER 3 0100000000000005 "焦点打断或者肾击" "INV_MISC_QUESTIONMARK"
+#showtooltip 暗影步 
+/cast [target=focus] 暗影步
+/cast [target=focus] 脚踢 
+END
+VER 3 010000000000000D "焦点致盲" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [target=focus, exists] 致盲; 致盲
+END
+VER 3 0100000000000003 "脚踢" "INV_MISC_QUESTIONMARK"
+#showtooltip 脚踢
+/cast [harm] [@focus, harm] [@targettarget, harm] 脚踢
+END
+VER 3 010000000000001B "锁喉" "INV_MISC_QUESTIONMARK"
+#showtooltip 锁喉
+/cast [@mouseover,exists,harm][] 锁喉
+END
+VER 3 0100000000000004 "闷棍加偷取和嫁祸" "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast 闷棍
+/cast 搜索
+END
+VER 3 0100000000000009 "鼠标割裂" "INV_MISC_QUESTIONMARK"
+#showtooltip 割裂
+/cast [@mouseover,exists,harm][] 割裂
+END

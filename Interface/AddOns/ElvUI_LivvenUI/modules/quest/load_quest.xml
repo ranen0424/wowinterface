@@ -1,0 +1,7 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="questAutomation.lua"/>
+	<Script file="questAnnouncment.lua"/>
+	<Script file="questSmartTracker.lua"/>
+	<Script file="questTrackerVisibility.lua"/>
+	<!-- <Script file="questListEnhanced.lua"/> -->
+</Ui>
